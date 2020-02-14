@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Degenia Hospitality Group</title>
+    <script src="assets/plugins/jquery/jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" href="assets/plugins/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <script src="assets/plugins/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.6.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-analytics.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Degenia Hospitality Group</a>
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul id="sredina" class="nav navbar-nav sredina">
+                        <li><a href="#hoteli">Hoteli</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="glyphsign"><a href="#" data-toggle="modal" data-target="#myFormSignUp"><span
+                                    class="glyphicon glyphicon-user"></span>Registracija</a></li>
+                        <li><a class="aaa" href="index.html">Odjava</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- SECTION & MAIN -->
+
+    <section id="home" class="poadinska_slika">
+        <div class="text_na_pozadini">
+            <h1>Degenia</h1>
+            <h3>Hospitality Group</h3>
+        </div>
+        <button onclick="topFunction()" id="myBtn" title="Go to top">Vrh</button>
+    </section>
+
+    <main>
+        <div class="container aboutus">
+            <h1>Statistika</h1>
+            <table id="statistikaTablica">
+                <thead>
+                    <tr>
+                        <td class="zaglavlje">Ukupan Broj Hotela</td>
+                        <td class="zaglavlje">Ukupan Broj Gostiju</td>
+                        <td class="zaglavlje">Ukupan Kapacitet Gostiju Lanca Hotela</td>
+                        <td class="zaglavlje">Ukupan Broj Slobodnih Soba</td>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>            
+        </div>
+    </main>
+
+    <!-- TABLICA -->
+
+    <div id="hoteli" class="container">
+        <h1 class="naslovtablice">Prikaz svih hotela</h1>
+        <div id="hotel-btns">                
+            <input id="poimenu" class="unos" type="text" placeholder="Traži po imenu..">
+            <input id="pogradu" class="unos" type="text" placeholder="Traži po gradu..">
+            <button onclick="Pretrazi()" id="pretragabtn" class="pretrazi btn" type="submit"><a href="#">Pretraži</a></button>
+
+            <label class="naslovdodaj" for="add">Dodaj Hotel</label>
+            <button id="add" class="btn" data-toggle="modal" data-target="#dodaj-hotel">
+                <span class="glyphicon glyphicon-plus"></span>
+            </button>               
+        </div>
+        <div class="container table-responsive" style="padding-left: 0;">
+            <table id="tablica-hoteli" class="tablicahoteli" style="margin: 0 auto;">
+                <thead>
+        
+                </thead>
+                <tbody>
+        
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+        <div class="footer_content main-footer widgets-dark typo-light">
+            <div class="container">
+                <div class="row footer_row">
+                    <div class="col-lg-4 footer_col footer_crta">
+                        <div class="footer_item text-center">
+                            <div
+                                class="footer_icon d-flex flex-column align-items-center justify-content-center ml-auto mr-auto">
+                                <div><img src="/img/hoteli_logo_call_1.png" alt=""></div class="lillogos">
+                            </div>
+                            <div class="footer_title">Kontakt</div>
+                            <div class="footer_list">
+                                <ul>
+                                    <li>+34 5667 4332 244</li>
+                                    <li>+224 667 889</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 footer_col footer_crta">
+                        <div class="footer_item text-center">
+                            <div
+                                class="footer_icon d-flex flex-column align-items-center justify-content-center ml-auto mr-auto">
+                                <div><img src="/img/hoteli_logo_mail_1.png" alt=""></div class="lillogos">
+                            </div>
+                            <div class="footer_title">Email</div>
+                            <div class="footer_list">
+                                <ul>
+                                    <li>Contact@sportify25.com</li>
+                                    <li>office@sportify25.com</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 footer_col">
+                        <div class="footer_item text-center">
+                            <div
+                                class="footer_icon d-flex flex-column align-items-center justify-content-center ml-auto mr-auto">
+                                <div><img src="/img/hoteli_logo_location_1.png" alt=""></div>
+                            </div>
+                            <div class="footer_title">Lokacija</div>
+                            <div class="footer_list">
+                                <ul>
+                                    <li>MAin str. 25</li>
+                                    <li>458811 CA</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <p>Copyright Degenia Hospitality Group © 2020. <span class="novired">All rights reserved.</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SIGNUP MODAL -->
+
+    <div class="modal fade" id="myFormSignUp" tabindex="-1" role="dialog">
+        <div class=" modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-info">
+                    <button type="button" class="btn btn-lg close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Zatvori</span>
+                    </button>
+                    <h4 class="modal-title text-center" id="myModalLabel">Novi račun</h4>
+                </div>
+
+                <div class="modal-body">
+                    <form id="myForm" name="Form">
+                        <div class="form-group">
+                            <label for="Username">Korisničko ime</label>
+                            <span class="glyphicon glyphicon-ok glyphuserok"></span>
+                            <span class="glyphicon glyphicon-remove glyphuserremove">
+                                <p class="passalert praznavrijednost1">-To korisničko ime je zauzeto!</p>
+                            </span>
+                            <input type="text" class="form-control" id="SignUpUsername" name="input1" placeholder="Ime123"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="InputMail">Email</label>
+                            <span class="glyphicon glyphicon-ok glyphmailok"></span>
+                            <span class="glyphicon glyphicon-remove glyphmailremove">
+                                <p class="passalert praznavrijednost2">-Taj email je već registriran!</p>
+                            </span>
+                            <input type="email" class="form-control" id="SignUpInputMail" name="input2"
+                                placeholder="ime123@gmail.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="Password">Lozinka</label>
+                            <p class="passalert">-Budite sigurni da je 6 znakova dugačka i dovoljno jaka!</p>
+                            <input type="password" class="form-control" id="SignUpPassword" placeholder="Lozinka" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="ConfirmPassword">Potvrdite lozinku</label>
+                            <input type="password" class="form-control" id="SignUpConfirmPassword"
+                                placeholder="Potvrdite lozinku" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="userORadmin">Uloga</label>
+                            <br>
+                            <input type="radio" id="checkKorisnika" name="uloga" value="user" checked> Korisnik<br>
+                            <input type="radio" id="checkAdmina" name="uloga" value="admin"> Admin<br>
+                        </div>
+
+                        <div class="alert alertconfirmnot">Lozinke se ne podudaraju</div>
+                        <div class="alert alertconfirmdo">Lozinke se podudaraju</div>
+                        <div class="alert alertsignyes">Uspješno ste se registrirali</div>
+                        <div class="alert alertsignno">Pogreška u registraciji!</div>
+
+                        <button type="submit" class="btn" id="SignUpPotvrdi">Registriraj se</button>
+                    </form id>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- UPDATE MODAL -->
+
+    <div class="modal fade" id="azuriraj-hotel" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-info">
+                    <button type="button" class="btn btn-lg close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Zatvori</span>
+                    </button>
+                    <h4 class="modal-title text-center" id="myModalLabel">Ažuriraj hotel</h4>
+                </div>
+
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="inptNazivHotelaEdit">Naziv</label>
+                        <input type="text" class="form-control" id="inptNazivHotelaEdit">
+                    </div>
+                    <div class="form-group">
+                        <label for="txtAdresaHotelaEdit">Adresa</label>
+                        <input class="form-control" id="txtAdresaHotelaEdit">
+                    </div>
+                    <div class="form-group">
+                        <label for="txtGradHotelaEdit">Grad</label>
+                        <input class="form-control" id="txtGradHotelaEdit">
+                    </div>
+                    <div class="form-group">
+                        <label for="txtZupanijaHotelaEdit">Županija</label>
+                        <input class="form-control" id="txtZupanijaHotelaEdit">
+                    </div>
+                    <div class="form-group">
+                        <label for="txtKapacitetHotelaEdit">Kapacitet</label>
+                        <input class="form-control" id="txtKapacitetHotelaEdit">
+                    </div>
+                    <button id="btnEdit" type="button" class="btn btn-success" data-dismiss="modal">Ažuriraj</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- DELETE MODAL -->
+    
+    <div class="modal fade" id="obrisi-hotel" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-info">
+                    <button type="button" class="btn btn-lg close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Zatvori</span>
+                    </button>
+                    <h4 class="modal-title text-center" id="myModalLabel">Obriši hotel</h4>
+                </div>
+                <div class="modal-body brisanjemodal">
+                    <h1>Jeste sigurni da želite obrisati hotel:</h1>
+                    <h2 id="imehotela"></h2>
+                    
+                    <button id="btnDelete" type="button" class="btn btn-success" data-dismiss="modal">Obriši</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- DODAJ HOTEL MODAL -->
+
+    <div class="modal fade" id="dodaj-hotel" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-info">
+                    <button type="button" class="btn btn-lg close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Zatvori</span>
+                    </button>
+                    <h4 class="modal-title text-center" id="myModalLabel">Dodaj hotel</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="inptNazivHotela">Naziv hotela</label>
+                        <input type="text" class="form-control" id="inptNazivHotela">
+                    </div>
+                    <div class="form-group">
+                        <label for="txtAdresaHotela">Adresa</label>
+                        <input class="form-control" id="txtAdresaHotela">
+                    </div>
+                    <div class="form-group">
+                        <label for="txtGradHotela">Grad</label>
+                        <input class="form-control" id="txtGradHotela">
+                    </div>
+                    <div class="form-group">
+                        <label for="txtZupanijaHotela">Zupanija</label>
+                        <input class="form-control" id="txtZupanijaHotela">
+                    </div>
+                    <div class="form-group">
+                        <label for="txtKapacitetHotela">Kapacitet</label>
+                        <input class="form-control" id="txtKapacitetHotela">
+                    </div>
+                    <button onclick="DodajHotel()" type="button" class="btn btn-success" data-dismiss="modal">Dodaj</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PREGLED BORAVKA MODAL -->
+    
+    <div class="modal fade" id="pregledboravka" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-info">
+                    <button type="button" class="btn btn-lg close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Zatvori</span>
+                    </button>
+                    <h4 class="modal-title text-center" id="myModalLabel">Pregled Rezervacija</h4>
+                </div>
+                <div class="modal-body ajnasredinu">
+                    <div class="form-group">
+                        <h2 id="imehotela2"></h2>
+                    </div>
+                    <div class="form-group">
+                        <table id="rezervacije" class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>R.br.</th>
+                                    <th>ID rezervacije</th>
+                                    <th>Broj rezerviranih mjesta</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/firebase_config.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/admin.js"></script>
+    
+</body>
+
+</html>

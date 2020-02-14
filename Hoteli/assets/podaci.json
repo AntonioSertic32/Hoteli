@@ -1,0 +1,139 @@
+{
+  "hoteli": [
+    {
+      "Id": "1",
+      "Naziv": "Hotel Sol Sipar for Plava Laguna",
+      "Adresa": "Jadranska ul. 78, 52470, Umag",
+      "Grad": "Umag",
+      "Županija": "Istarska županija",
+      "Kapacitet": "142"
+    },
+    {
+      "Id": "2",
+      "Naziv": "Bluesun hotel Neptun",
+      "Adresa": "Slatina ul. 4, 21325, Tučepi",
+      "Grad": "Tučepi",
+      "Županija": "Splitsko-dalmatinska županija",
+      "Kapacitet": "280"
+    },
+    {
+      "Id": "3",
+      "Naziv": "Best Western Premier Hotel Astoria",
+      "Adresa": "Petrinjska ul. 71, 10000, Zagreb",
+      "Grad": "Zagreb",
+      "Županija": "Zagrebačka županija",
+      "Kapacitet": "108"
+    },
+    {
+      "Id": "4",
+      "Naziv": "Esplanade Zagreb",
+      "Adresa": "Ul. Antuna Mihanovića 1, 10000, Zagreb",
+      "Grad": "Zagreb",
+      "Županija": "Zagrebačka županija",
+      "Kapacitet": "200"
+    },
+    {
+      "Id": "5",
+      "Naziv": "Hotel Royal Airport",
+      "Adresa": "Ul. Šandora Brešćenskog 8, 10410, Velika Gorica",
+      "Grad": "Velika Gorica",
+      "Županija": "Zagrebačka županija",
+      "Kapacitet": "150"
+    },
+    {
+      "Id": "6",
+      "Naziv": "Livris Hotel",
+      "Adresa": "Rapska Ul. 12, 10000, Zagreb",
+      "Grad": "Zagreb",
+      "Županija": "Zagrebačka županija",
+      "Kapacitet": "170"
+    },
+    {
+      "Id": "7",
+      "Naziv": "Valamar Sanfior Hotel & Casa",
+      "Adresa": "Rabac bb, 52221, Rabac",
+      "Grad": "Rabac",
+      "Županija": "Istarska županija",
+      "Kapacitet": "110"
+    },
+    {
+      "Id": "8",
+      "Naziv": "Hotel Villa Kapetanovic",
+      "Adresa": "Nova cesta 12a, 51410, Opatija",
+      "Grad": "Opatija",
+      "Županija": "Primorsko-goranska županija",
+      "Kapacitet": "112"
+    },
+    {
+      "Id": "9",
+      "Naziv": "Hotel Lone",
+      "Adresa": "Ul. Luje Adamovića 31, 52210, Rovinj",
+      "Grad": "Rovinj",
+      "Županija": "Istarska županija",
+      "Kapacitet": "170"
+    },
+    {
+      "Id": "10",
+      "Naziv": "Falkensteiner Hotel & Spa Iadera",
+      "Adresa": "Resort Punta Skala, 23231, Petrčane",
+      "Grad": "Petrčani",
+      "Županija": "Zadarska županija",
+      "Kapacitet": "180"
+    },
+    {
+      "Id": "11",
+      "Naziv": "Marvie Hotel & Health",
+      "Adresa": "Peričićeva ul. 1, 21000, Split",
+      "Grad": "Split",
+      "Županija": "Splitsko-dalmatinska županija",
+      "Kapacitet": "220"
+    },
+    {
+      "Id": "12",
+      "Naziv": "Villa Dubrovnik",
+      "Adresa": "Ul. Vlaha Bukovca 6, 20000, Dubrovnik",
+      "Grad": "Dubrovnik",
+      "Županija": "Dubrovačko-neretvanska županija",
+      "Kapacitet": "126"
+    },
+    {
+      "Id": "13",
+      "Naziv": "Boutique Hotel Alhambra",
+      "Adresa": "Čikat ul. 16, 51550, Mali Lošinj",
+      "Grad": "Mali Lošinj",
+      "Županija": "Primorsko-goranska županija",
+      "Kapacitet": "180"
+    },
+    {
+      "Id": "14",
+      "Naziv": "Hotel Mladimir Daing",
+      "Adresa": "Ul. Ivana Zajca 1, 43500, Daruvar",
+      "Grad": "Daruvar",
+      "Županija": "Bjelovarsko-bilogorska županija",
+      "Kapacitet": "180"
+    },
+    {
+      "Id": "15",
+      "Naziv": "Boutique Hotel Tvrđa",
+      "Adresa": "Franjevačka ul. 7, 31000, Osijek",
+      "Grad": "Osijek",
+      "Županija": "Osječko-baranjska županija",
+      "Kapacitet": "180"
+    }
+  ],
+
+  "users": [
+    {
+      "email": "gricko@gmail.com",
+      "password": "gricko",
+      "userORadmin": "admin",
+      "username": "Gricko"
+    },
+    {
+      "email": "novi@gmail.com",
+      "password": "novi",
+      "userORadmin": "user",
+      "username": "Novi"
+    }
+  ]
+}
